@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GameXO_MAUI.Pages.GamePage"
+             BackgroundColor="#F0F0F0"
+             BackgroundImageSource="endless_constellation.png">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto" 
+          ColumnDefinitions="*, Auto"
+          VerticalOptions="Center"
+          HorizontalOptions="Center">
+
+        <Label Grid.Row="0"
+               Text="Tic-Tac-Toe"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="AntiqueWhite"/>
+
+        <Label Grid.Row="1"
+               Text="{Binding TurnDisplay}"
+               FontSize="20"
+               HorizontalOptions="Center"
+               TextColor="White"
+               Padding="10"
+               VerticalOptions="Center"/>
+
+        <Grid Grid.Row="2"
+              ColumnSpacing="5"
+              RowSpacing="5"
+              BackgroundColor="DarkGrey"
+              Padding="10"
+              HorizontalOptions="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="70"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Text="{Binding Board[0]}" Command="{Binding MarkCommand}" CommandParameter="0" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="{Binding Board[1]}" Command="{Binding MarkCommand}" CommandParameter="1" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+            <Button Grid.Row="0" Grid.Column="2" Text="{Binding Board[2]}" Command="{Binding MarkCommand}" CommandParameter="2" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+
+            <Button Grid.Row="1" Grid.Column="0" Text="{Binding Board[3]}" Command="{Binding MarkCommand}" CommandParameter="3" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+            <Button Grid.Row="1" Grid.Column="1" Text="{Binding Board[4]}" Command="{Binding MarkCommand}" CommandParameter="4" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+            <Button Grid.Row="1" Grid.Column="2" Text="{Binding Board[5]}" Command="{Binding MarkCommand}" CommandParameter="5" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+
+            <Button Grid.Row="2" Grid.Column="0" Text="{Binding Board[6]}" Command="{Binding MarkCommand}" CommandParameter="6" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+            <Button Grid.Row="2" Grid.Column="1" Text="{Binding Board[7]}" Command="{Binding MarkCommand}" CommandParameter="7" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+            <Button Grid.Row="2" Grid.Column="2" Text="{Binding Board[8]}" Command="{Binding MarkCommand}" CommandParameter="8" BackgroundColor="DarkSlateGrey" TextColor="White"/>
+        </Grid>
+
+        <Button Grid.Row="3"
+                Text="Reset"
+                Command="{Binding ResetCommand}"
+                BackgroundColor="#FF5252"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="12"
+                WidthRequest="220"
+                HeightRequest="50"
+                HorizontalOptions="Center"/>
+
+        <Button Grid.Row="4"
+                Text="High Scores"
+                Command="{Binding GoToScoreCommand}"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="12"
+                WidthRequest="220"
+                HeightRequest="50"
+                HorizontalOptions="Center" />
+
+        <Button Grid.Row="5" 
+                Text="New Game"
+                Command="{Binding GoBackCommand}"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                FontSize="18"
+                CornerRadius="12"
+                WidthRequest="220"
+                HeightRequest="50"
+                HorizontalOptions="Center"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,63 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GameXO_MAUI.MainPage"
+             BackgroundColor="#F0F0F0"
+             BackgroundImageSource="endless_constellation.png">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto" 
+          ColumnDefinitions="*, Auto"
+          VerticalOptions="Center"
+          HorizontalOptions="Center">
+
+        <Label Grid.Row="0"
+               Text="Tic-Tac-Toe"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="AntiqueWhite"/>
+
+        <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="20">
+            <Label Text="Enter Player 1 Name:"
+                   FontSize="18"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+            <Entry Text="{Binding FirstName}"
+                   Placeholder="Player 1"
+                   BackgroundColor="#333"
+                   TextColor="White"
+                   PlaceholderColor="LightGray"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   Margin="0,10"/>
+        </StackLayout>
+
+        <StackLayout Grid.Row="2" HorizontalOptions="Center" Padding="20">
+            <Label Text="Enter Player 2 Name:"
+                   FontSize="18"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+            <Entry Text="{Binding SecondName}"
+                   Placeholder="Player 2"
+                   BackgroundColor="#333"
+                   TextColor="White"
+                   PlaceholderColor="LightGray"
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   Margin="0,10"/>
+        </StackLayout>
+
+        <Button Grid.Row="3"
+                Text="Play"
+                Command="{Binding GoToGameCommand}"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                FontSize="20"
+                CornerRadius="20"
+                WidthRequest="200"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
+
+    </Grid>
+    
+</ContentPage>

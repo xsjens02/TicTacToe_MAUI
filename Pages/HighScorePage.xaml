@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GameXO_MAUI.Pages.HighScorePage"
+             BackgroundColor="#F0F0F0"
+             BackgroundImageSource="endless_constellation.png">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto" 
+          ColumnDefinitions="*, Auto"
+          VerticalOptions="Center" 
+          HorizontalOptions="Center">
+
+        <Label Grid.Row="0"
+               Text="High Scores"
+               FontSize="26"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="AntiqueWhite"/>
+
+        <StackLayout Grid.Row="1" HorizontalOptions="Center" Padding="20">
+            <Label Text="Best Player:"
+                   FontSize="18"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+            <Label Text="{Binding BestPlayer}"
+                   FontSize="22"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+
+        <Button Grid.Row="2"
+                Text="New Game"
+                Command="{Binding GoBackCommand}"
+                BackgroundColor="#4CAF50"
+                TextColor="White"
+                FontSize="20"
+                CornerRadius="20"
+                WidthRequest="200"
+                HeightRequest="50"
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
+    </Grid>
+
+</ContentPage>
